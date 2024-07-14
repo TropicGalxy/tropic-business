@@ -58,7 +58,7 @@ RegisterNetEvent('business:buyBusiness', function(index)
         }
         
         saveBusinesses() -- Save ownership data
-        TriggerClientEvent('QBCore:Notify', src, "You have purchased the business and are now a " .. business.BusinessJob, 'success')
+        TriggerClientEvent('QBCore:Notify', src, "You have purchased the business and are now own " .. business.BusinessJob, 'success')
     else
         TriggerClientEvent('QBCore:Notify', src, "You don't have enough money to purchase this business", 'error')
     end
