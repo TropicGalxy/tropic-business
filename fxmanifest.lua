@@ -3,7 +3,7 @@ game 'gta5'
 
 lua54 'yes'
 author 'tropicgalxy'
-description 'a very script to buy multiple business'
+description 'a very simple script to buy multiple business'
 version '1.0.0'
 
 shared_scripts {
