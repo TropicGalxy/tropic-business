@@ -1,11 +1,31 @@
 # tropic-business
 
 
-a simple way to buy businesses
+A simple way to buy businesses
 
-dependencies:
+# Dependencies:
 
-[ox target](https://github.com/overextended/ox_target) or [qb target](https://github.com/qbcore-framework/qb-target)
+- [ox target](https://github.com/overextended/ox_target) 
+
+or 
+
+- [qb target](https://github.com/qbcore-framework/qb-target)
+
+# Features
+
+- Blips for locations
+
+- Business Name
+
+- Business Price
+
+- The Businesses Job
+
+- The Businesses Grade
+
+- Ped Model
+
+- Sell Back Percentage
 
 
 support: https://dsc.gg/tropicgalxy
