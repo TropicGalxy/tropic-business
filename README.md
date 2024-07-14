@@ -9,7 +9,7 @@ A simple way to buy businesses
 
 or 
 
-- [qb target](https://github.com/qbcore-framework/qb-target)
+- [qb target](https://github.com/qbcore-framework/qb-target) -- THIS IS NOT TESTED
 
 # Features
 
@@ -28,5 +28,10 @@ or
 - Sell Back Percentage
 
 
-# Support: 
-https://dsc.gg/tropicgalxy
+# Links 
+
+Preview: 
+
+Support: https://dsc.gg/tropicgalxy
+
+Join the server i own: https://dsc.gg/tropicalroleplay
