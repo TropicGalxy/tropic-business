@@ -16,7 +16,7 @@ Citizen.CreateThread(function()
 
         -- Add target interaction
         local buyLabel = "Buy Business ($" .. business.BusinessPrice .. ")"
-        local sellLabel = "Sell Business ($" .. (business.BusinessPrice * (business.SellBackPercentage / 100)) .. ")" -- if you want to show how much you get from selling then change line 38 to: label = sellLabel
+        local sellLabel = "Sell Business ($" .. (business.BusinessPrice * (business.SellBackPercentage / 100)) .. ")" -- if you want to show how much you get from selling then change line 38 to: label = sellLabe
 
         if Config.Target == "ox" then
             print("Registering ox_target for business: " .. business.BusinessName)
