@@ -1,5 +1,3 @@
-local QBCore = exports['qb-core']:GetCoreObject()
-
 Citizen.CreateThread(function()
     print("Config.Target: " .. tostring(Config.Target))  -- Debug: Check if Config.Target is read correctly
     for i, business in ipairs(Config.Businesses) do
@@ -16,7 +14,10 @@ Citizen.CreateThread(function()
         FreezeEntityPosition(ped, true)
         SetEntityInvincible(ped, true)
 
-        -- Add target interaction for ox_target
+        -- Add target interaction
+        local buyLabel = "Buy Business ($" .. business.BusinessPrice .. ")"
+        local sellLabel = "Sell Business ($" .. (business.BusinessPrice * (business.SellBackPercentage / 100)) .. ")"
+
         if Config.Target == "ox" then
             print("Registering ox_target for business: " .. business.BusinessName)
             exports.ox_target:addLocalEntity(ped, {
@@ -24,7 +25,7 @@ Citizen.CreateThread(function()
                     name = 'business:buy',
                     event = 'business:buy',
                     icon = 'fas fa-shopping-cart',
-                    label = 'Buy Business',
+                    label = buyLabel,
                     args = { index = i },
                     distance = 2.5,
                     onSelect = function()
@@ -49,7 +50,7 @@ Citizen.CreateThread(function()
                     {
                         event = "business:buy",
                         icon = "fas fa-shopping-cart",
-                        label = "Buy Business",
+                        label = buyLabel,
                         action = function()
                             TriggerServerEvent('business:buyBusiness', i)
                         end
@@ -57,7 +58,7 @@ Citizen.CreateThread(function()
                     {
                         event = "business:sell",
                         icon = "fas fa-dollar-sign",
-                        label = "Sell Business",
+                        label = sellLabel,
                         action = function()
                             TriggerServerEvent('business:sellBusiness', i)
                         end
@@ -81,29 +82,5 @@ Citizen.CreateThread(function()
             AddTextComponentString(business.BlipName)
             EndTextCommandSetBlipName(blip)
         end
-    end
-end)
-
-RegisterNetEvent('business:buy', function(data)
-    local index = data.index
-    local business = Config.Businesses[index]
-    local player = PlayerPedId()
-    local playerCoords = GetEntityCoords(player)
-    local dist = #(playerCoords - business.PedCoords)
-
-    if dist < 2.5 then
-        TriggerServerEvent('business:buyBusiness', index)
-    end
-end)
-
-RegisterNetEvent('business:sell', function(data)
-    local index = data.index
-    local business = Config.Businesses[index]
-    local player = PlayerPedId()
-    local playerCoords = GetEntityCoords(player)
-    local dist = #(playerCoords - business.PedCoords)
-
-    if dist < 2.5 then
-        TriggerServerEvent('business:sellBusiness', index)
     end
 end)
