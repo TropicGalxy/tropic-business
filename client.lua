@@ -19,31 +19,31 @@ Citizen.CreateThread(function()
         -- Add target interaction for ox_target
         if Config.Target == "ox" then
             print("Registering ox_target for business: " .. business.BusinessName)
-              exports.ox_target:addLocalEntity(ped, {
-        {
-            name = 'business:buy',
-            event = 'business:buy',
-            icon = 'fas fa-shopping-cart',
-            label = 'Buy Business',
-            args = { index = i },
-            distance = 2.5,
-            onSelect = function()
-                TriggerServerEvent('business:buyBusiness', i)
-            end
-        },
-        {
-            event = "business:sell",
-            icon = "fas fa-dollar-sign",
-            label = "Sell Business",
-            args = { index = i },
-            distance = 2.5,
-            onSelect = function()
-                TriggerServerEvent('business:sellBusiness', i)
-            end
-        }
-    })      
-         elseif Config.Target == "qb" then
-           print("Registering qb-target for business: " .. business.BusinessName)
+            exports.ox_target:addLocalEntity(ped, {
+                {
+                    name = 'business:buy',
+                    event = 'business:buy',
+                    icon = 'fas fa-shopping-cart',
+                    label = 'Buy Business',
+                    args = { index = i },
+                    distance = 2.5,
+                    onSelect = function()
+                        TriggerServerEvent('business:buyBusiness', i)
+                    end
+                },
+                {
+                    event = "business:sell",
+                    icon = "fas fa-dollar-sign",
+                    label = "Sell Business",
+                    args = { index = i },
+                    distance = 2.5,
+                    onSelect = function()
+                        TriggerServerEvent('business:sellBusiness', i)
+                    end
+                }
+            })      
+        elseif Config.Target == "qb" then
+            print("Registering qb-target for business: " .. business.BusinessName)
             exports['qb-target']:AddTargetEntity(ped, {
                 options = {
                     {
