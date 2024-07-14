@@ -1,3 +1,5 @@
+local QBCore = exports['qb-core']:GetCoreObject()
+
 Citizen.CreateThread(function()
     print("Config.Target: " .. tostring(Config.Target))  -- Debug: Check if Config.Target is read correctly
     for i, business in ipairs(Config.Businesses) do
