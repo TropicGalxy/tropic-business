@@ -21,6 +21,33 @@ drag and drop the script to your server files
 
 restart the server
 
+IF USING LICENSES:
+
+qb:
+
+-- In qb-inventory shared items file
+['business_license'] = {
+    label = 'Business License',
+    weight = 1,
+    type = 'item',
+    image = 'business_license.png', -- Add the appropriate image file
+    canRemove = true,
+}
+
+-----
+
+ox
+
+-- In ox-inventory shared items file
+['business_license'] = {
+    label = 'Business License',
+    weight = 1,
+    type = 'item',
+    image = 'business_license.png', -- Add the appropriate image file
+    canRemove = true,
+}
+
+
 # Features
 
 - Blips for locations
@@ -37,6 +64,7 @@ restart the server
 
 - Sell Back Percentage
 
+- Buy Businesses With License
 
 # Links 
 
@@ -45,3 +73,7 @@ Preview: https://youtu.be/WGHvTcwtjpw
 Support: https://dsc.gg/tropicgalxy
 
 Join the server i own: https://dsc.gg/tropicalroleplay
+
+# Most Recent Update
+
+added an option to buy the business with a license
