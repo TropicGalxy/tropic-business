@@ -30,7 +30,7 @@ or
 
 # Links 
 
-Preview: 
+Preview: https://youtu.be/WGHvTcwtjpw
 
 Support: https://dsc.gg/tropicgalxy
 
