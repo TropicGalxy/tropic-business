@@ -28,4 +28,5 @@ or
 - Sell Back Percentage
 
 
-support: https://dsc.gg/tropicgalxy
+# support: 
+https://dsc.gg/tropicgalxy
