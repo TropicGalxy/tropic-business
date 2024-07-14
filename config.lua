@@ -2,11 +2,15 @@ Config = {}
 
 Config.Target = "ox" -- Set to either "qb" or "ox"
 
+Config.RequireBusinessLicense = true -- Set to true if a business license is required
+
+Config.Inventory = "ox" -- Set to "qb" or "ox" based on your preference, only needed if RequireBusinessLicense = true
+
 Config.Businesses = {
     {
         EnableBlip = true,
         BusinessName = "Burgershot",
-        BusinessPrice = 32000,
+        BusinessPrice = 75000,
         BusinessJob = "burgershot",
         BusinessGrade = 4,
         PedCoords = vector4(-1187.4, -877.69, 12.83, 34.2), -- Set your ped coordinates here
