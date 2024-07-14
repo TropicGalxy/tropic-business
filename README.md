@@ -26,6 +26,7 @@ IF USING LICENSES:
 qb:
 
 -- In qb-inventory shared items file
+
 ['business_license'] = {
     label = 'Business License',
     weight = 1,
@@ -39,6 +40,7 @@ qb:
 ox
 
 -- In ox-inventory shared items file
+
 ['business_license'] = {
     label = 'Business License',
     weight = 1,
