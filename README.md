@@ -11,6 +11,16 @@ or
 
 - [qb target](https://github.com/qbcore-framework/qb-target) -- THIS IS NOT TESTED
 
+# Installation 
+
+choose your target in the fxmanifest
+
+configurate to your liking (you can check client.lua for an extra config option)
+
+drag and drop the script to your server files
+
+restart the server
+
 # Features
 
 - Blips for locations
