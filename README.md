@@ -27,12 +27,12 @@ qb:
 
 -- In qb-inventory shared items file
 
-['business_license'] = { 
-    label = 'Business License', 
-    weight = 1, 
-    type = 'item', 
-    image = 'business_license.png',  
-    canRemove = true, 
+['business_license'] = {  
+    label = 'Business License',  
+    weight = 1,  
+    type = 'item',  
+    image = 'business_license.png',   
+    canRemove = true,  
 }
 
 -----
@@ -41,12 +41,12 @@ ox
 
 -- In ox-inventory shared items file
 
-['business_license'] = { 
-    label = 'Business License', 
-    weight = 1, 
-    type = 'item', 
-    image = 'business_license.png',  
-    canRemove = true, 
+['business_license'] = {  
+    label = 'Business License',  
+    weight = 1,  
+    type = 'item',  
+    image = 'business_license.png',   
+    canRemove = true,  
 }
 
 
