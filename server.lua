@@ -41,7 +41,25 @@ RegisterNetEvent('business:buyBusiness', function(index)
     local business = Config.Businesses[index]
     local money = Player.PlayerData.money['cash']
 
-    -- Check if the player already owns the business
+    -- Check if business license is required
+    if Config.RequireBusinessLicense then
+        local hasLicense = false
+
+        if Config.Inventory == "qb" then
+            -- Check for business license in qb-inventory
+            hasLicense = Player.Functions.HasItem('business_license', 1)
+        elseif Config.Inventory == "ox" then
+            -- Check for business license in ox-inventory
+            hasLicense = Player.Functions.GetItemByName('business_license') and Player.Functions.GetItemByName('business_license').amount > 0
+        end
+
+        if not hasLicense then
+            TriggerClientEvent('QBCore:Notify', src, "You need a business license to purchase this business.", 'error')
+            return
+        end
+    end
+
+    -- Existing purchase logic
     if businesses[index] and businesses[index].owner == Player.PlayerData.citizenid then
         TriggerClientEvent('QBCore:Notify', src, "You already own this business", 'error')
         return
@@ -56,13 +74,14 @@ RegisterNetEvent('business:buyBusiness', function(index)
             owner = Player.PlayerData.citizenid,
             job = business.BusinessJob
         }
-        
+
         saveBusinesses() -- Save ownership data
-        TriggerClientEvent('QBCore:Notify', src, "You have purchased the business and are now own " .. business.BusinessJob, 'success')
+        TriggerClientEvent('QBCore:Notify', src, "You have purchased the business and are now the owner of " .. business.BusinessJob, 'success')
     else
         TriggerClientEvent('QBCore:Notify', src, "You don't have enough money to purchase this business", 'error')
     end
 end)
+
 
 RegisterNetEvent('business:sellBusiness', function(index)
     local src = source
