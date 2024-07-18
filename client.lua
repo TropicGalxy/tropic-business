@@ -7,7 +7,7 @@ Citizen.CreateThread(function()
         local pedModel = business.PedModel
         RequestModel(pedModel)
         while not HasModelLoaded(pedModel) do
-            Citizen.Wait(100)
+            Wait(100)
         end
         local ped = CreatePed(4, pedModel, business.PedCoords.x, business.PedCoords.y, business.PedCoords.z, business.PedCoords.w, false, true)
         SetEntityAsMissionEntity(ped, true, true)
