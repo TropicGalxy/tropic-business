@@ -105,8 +105,8 @@ RegisterNetEvent('business:sellBusiness', function(index)
 end)
 
 -- Check business ownership when a player connects
-AddEventHandler('playerConnecting', function(name, setKickReason, deferrals)
-    local src = source
+RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
+      local src = source
     local Player = QBCore.Functions.GetPlayer(src)
 
     -- Give ownership back to players if they own a business
@@ -115,4 +115,4 @@ AddEventHandler('playerConnecting', function(name, setKickReason, deferrals)
             Player.Functions.SetJob(data.job, Config.Businesses[index].BusinessGrade)
         end
     end
-end)
+end) 
