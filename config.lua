@@ -6,6 +6,8 @@ Config.RequireBusinessLicense = true -- Set to true if a business license is req
 
 Config.Inventory = "ox" -- Set to "qb" or "ox" based on your preference, only needed if RequireBusinessLicense = true
 
+Config.Notify = "qb" -- currently supports: qb, okok
+
 Config.Businesses = {
     {
         EnableBlip = true,
