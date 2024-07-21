@@ -25,15 +25,10 @@ IF USING LICENSES:
 
 qb:
 
--- In qb-inventory shared items file
+-- In qb-core/shares/items.lua file
 
-['business_license'] = {  
-    label = 'Business License',  
-    weight = 1,  
-    type = 'item',  
-    image = 'business_license.png',   
-    canRemove = true,  
-}
+-- Tropic Business
+business_license 	        = {name = 'business_license', 		        label = 'Business License', 		 	    weight = 1, 		type = 'item', 		image = 'business_license.png', 	    unique = false, 	useable = true, 	shouldClose = true,	   combinable = nil,                    description = 'Business License'},
 
 -----
 
