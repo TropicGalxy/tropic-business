@@ -123,9 +123,18 @@ RegisterNetEvent('business:sellBusiness', function(index)
 
     -- Check if the player owns the business
     if businesses[index] and businesses[index].owner == Player.PlayerData.citizenid then
-        local refund = business.BusinessPrice * (business.SellBackPercentage / 100)
+    local refund = business.BusinessPrice * (business.SellBackPercentage / 100)
+    if Config.PayOption == "cash" then
         Player.Functions.AddMoney('cash', refund)
         Player.Functions.SetJob('unemployed', 0)
+    elseif Config.PayOption == "bank" then
+        Player.Functions.AddMoney('bank', refund)
+        Player.Functions.SetJob('unemployed', 0)
+    else
+        print("Incorrect payment option selected")
+        return 
+    end
+        
 
         -- Remove ownership
         businesses[index] = { owner = nil, job = nil } -- Reset to null
