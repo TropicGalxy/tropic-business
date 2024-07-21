@@ -8,6 +8,8 @@ Config.Inventory = "ox" -- Set to "qb" or "ox" based on your preference, only ne
 
 Config.Notify = "qb" -- currently supports: qb, okok
 
+Config.PayOption = "cash" -- cash or bank
+
 Config.Businesses = {
     {
         EnableBlip = true,
