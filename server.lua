@@ -47,7 +47,7 @@ RegisterNetEvent('business:buyBusiness', function(index)
 
         if Config.Inventory == "qb" then
             -- Check for business license in qb-inventory
-            hasLicense = Player.Functions.HasItem('business_license', 1)
+            hasLicense = exports['qb-inventory']:HasItem(source, 'business_license', 1)
         elseif Config.Inventory == "ox" then
             -- Check for business license in ox-inventory
             hasLicense = Player.Functions.GetItemByName('business_license') and Player.Functions.GetItemByName('business_license').amount > 0
