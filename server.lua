@@ -78,21 +78,25 @@ RegisterNetEvent('business:buyBusiness', function(index)
     end
 
      if money >= business.BusinessPrice then
-       if Config.PayOption == "cash" then
-        Player.Functions.RemoveMoney('cash', business.BusinessPrice) then
+    if Config.PayOption == "cash" then
+        Player.Functions.RemoveMoney('cash', business.BusinessPrice)
         Player.Functions.SetJob(business.BusinessJob, business.BusinessGrade)
-        elseif Config.PayOption == "bank" then
-        Player.Functions.RemoveMoney('bank', business.BusinessPrice) then
+    elseif Config.PayOption == "bank" then
+        Player.Functions.RemoveMoney('bank', business.BusinessPrice)
         Player.Functions.SetJob(business.BusinessJob, business.BusinessGrade)
-            else print("Incorrect payment option selected")
+    else
+        print("Incorrect payment option selected")
+        return 
+    end
 
-        -- Set ownership in the businesses table
-        businesses[index] = {
-            owner = Player.PlayerData.citizenid,
-            job = business.BusinessJob
-        }
+    -- Set ownership in the businesses table
+    businesses[index] = {
+        owner = Player.PlayerData.citizenid,
+        job = business.BusinessJob
+    }
 
         saveBusinesses() -- Save ownership data
+
         if Config.Notify == "qb" then
             TriggerClientEvent('QBCore:Notify', src, "You have purchased the business and are now the owner of " .. business.BusinessJob, 'success')
         elseif Config.Notify == "okok" then
