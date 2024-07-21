@@ -1,5 +1,11 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
+-- Function to check if the player owns the business
+local function isBusinessOwned(index)
+    local Player = QBCore.Functions.GetPlayerData()
+    return businesses[index] and businesses[index].owner == Player.citizenid
+end
+
 Citizen.CreateThread(function()
     print("Config.Target: " .. tostring(Config.Target))  -- Debug: Check if Config.Target is read correctly
     for i, business in ipairs(Config.Businesses) do
@@ -16,8 +22,8 @@ Citizen.CreateThread(function()
         FreezeEntityPosition(ped, true)
         SetEntityInvincible(ped, true)
 
-        -- Add target interaction
-        local buyLabel = "Buy Business ($" .. business.BusinessPrice .. ")"
+        -- Determine the label based on ownership
+        local buyLabel = isBusinessOwned(i) and "Owned" or "Buy Business ($" .. business.BusinessPrice .. ")"
         local sellLabel = "Sell Business ($" .. (business.BusinessPrice * (business.SellBackPercentage / 100)) .. ")" -- if you want to show how much you get from selling then change line 38 and 61 to: label = sellLabel
 
         if Config.Target == "ox" then
@@ -31,7 +37,9 @@ Citizen.CreateThread(function()
                     args = { index = i },
                     distance = 2.5,
                     onSelect = function()
-                        TriggerServerEvent('business:buyBusiness', i)
+                        if not isBusinessOwned(i) then
+                            TriggerServerEvent('business:buyBusiness', i)
+                        end
                     end
                 },
                 {
@@ -54,7 +62,9 @@ Citizen.CreateThread(function()
                         icon = "fas fa-shopping-cart",
                         label = buyLabel,
                         action = function()
-                            TriggerServerEvent('business:buyBusiness', i)
+                            if not isBusinessOwned(i) then
+                                TriggerServerEvent('business:buyBusiness', i)
+                            end
                         end
                     },
                     {
