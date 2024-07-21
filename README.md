@@ -27,7 +27,7 @@ qb:
 
 -- In qb-core/shares/items.lua file
 
--- Tropic Business
+
 business_license 	        = {name = 'business_license', 		        label = 'Business License', 		 	    weight = 1, 		type = 'item', 		image = 'business_license.png', 	    unique = false, 	useable = true, 	shouldClose = true,	   combinable = nil,                    description = 'Business License'},
 
 -----
