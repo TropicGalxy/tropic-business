@@ -77,9 +77,14 @@ RegisterNetEvent('business:buyBusiness', function(index)
         return
     end
 
-    if money >= business.BusinessPrice then
-        Player.Functions.RemoveMoney('cash', business.BusinessPrice)
+     if money >= business.BusinessPrice then
+       if Config.PayOption == "cash" then
+        Player.Functions.RemoveMoney('cash', business.BusinessPrice) then
         Player.Functions.SetJob(business.BusinessJob, business.BusinessGrade)
+        elseif Config.PayOption == "bank" then
+        Player.Functions.RemoveMoney('bank', business.BusinessPrice) then
+        Player.Functions.SetJob(business.BusinessJob, business.BusinessGrade)
+            else print("Incorrect payment option selected")
 
         -- Set ownership in the businesses table
         businesses[index] = {
