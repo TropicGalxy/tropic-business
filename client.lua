@@ -60,7 +60,7 @@ Citizen.CreateThread(function()
                     {
                         event = "business:sell",
                         icon = "fas fa-dollar-sign",
-                        label = "Sell Label",
+                        label = "sellLabel,
                         action = function()
                             TriggerServerEvent('business:sellBusiness', i)
                         end
