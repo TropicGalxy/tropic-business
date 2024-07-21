@@ -4,7 +4,7 @@ game 'gta5'
 lua54 'yes'
 author 'tropicgalxy'
 description 'a very simple script to buy multiple business'
-version '1.0.0'
+version '1.1'
 
 shared_scripts {
     'config.lua'
