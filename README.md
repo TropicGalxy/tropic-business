@@ -9,7 +9,7 @@ A simple way to buy businesses
 
 or 
 
-- [qb target](https://github.com/qbcore-framework/qb-target) -- THIS IS NOT TESTED
+- [qb target](https://github.com/qbcore-framework/qb-target)
 
 # Installation 
 
