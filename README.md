@@ -73,4 +73,4 @@ Join the server i own: https://dsc.gg/tropicalroleplay
 
 # Most Recent Update
 
-added an option to buy the business with a license
+added a config option for how you would like to buy businesses
