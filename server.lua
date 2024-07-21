@@ -56,7 +56,8 @@ RegisterNetEvent('business:buyBusiness', function(index)
         if not hasLicense then
             if Config.Notify == "qb" then
         TriggerClientEvent('QBCore:Notify', src, "You need a business license to purchase this", 'error')
-            else if Config.Notify == "okok" then
+    end    
+        else if Config.Notify == "okok" then
             TriggerClientEvent('okokNotify:Alert', source, 'Error', 'You need a business license to purchase this', 1000, 'error', false)
                 else 
               print("There is no valid notify script enabled")
@@ -68,6 +69,7 @@ RegisterNetEvent('business:buyBusiness', function(index)
     if businesses[index] and businesses[index].owner == Player.PlayerData.citizenid then
         if Config.Notify == "qb" then
         TriggerClientEvent('QBCore:Notify', src, "You already own this business", 'error')
+        end
             else if Config.Notify == "okok" then
             TriggerClientEvent('okokNotify:Alert', source, 'Error', 'You already own this busines', 1000, 'error', false)
                 else 
@@ -88,13 +90,16 @@ RegisterNetEvent('business:buyBusiness', function(index)
         saveBusinesses() -- Save ownership data
         if Config.Notify == "qb" then
         TriggerClientEvent('QBCore:Notify', src, "You have purchased the business and are now the owner of " .. business.BusinessJob, 'success')
-            else if Config.Notify == "okok" then
+    end     
+       else if Config.Notify == "okok" then
             TriggerClientEvent('okokNotify:Alert', source, 'Success', 'You have purchased the business and are now the owner of " .. business.BusinessJob', 1000, 'success', false)
                 else 
         print("There is no valid notify script enabled")
+end
     else
         if Config.Notify == "qb" then
         TriggerClientEvent('QBCore:Notify', src, "You dont have enough money", 'error')
+        end
             else if Config.Notify == "okok" then
             TriggerClientEvent('okokNotify:Alert', source, 'Error', 'You dont have enough money', 1000, 'error', false)
                 else 
@@ -120,14 +125,17 @@ RegisterNetEvent('business:sellBusiness', function(index)
         saveBusinesses() -- Save updated ownership data
         if Config.Notify == "qb" then
         TriggerClientEvent('QBCore:Notify', src, "You have sold the business and received $" .. refund, 'success')
-            else if Config.Notify == "okok" then
+    end      
+       else if Config.Notify == "okok" then
             TriggerClientEvent('okokNotify:Alert', source, 'Success', 'You have sold the business and received $" .. refund', 1000, 'success', false)
-                else 
+            end        
+        else 
               print("There is no valid notify script enabled")
     else
         if Config.Notify == "qb" then
         TriggerClientEvent('QBCore:Notify', src, "You dont own this business", 'error')
-            else if Config.Notify == "okok" then
+    end    
+         else if Config.Notify == "okok" then
             TriggerClientEvent('okokNotify:Alert', source, 'Error', 'You dont own this business', 1000, 'error', false)
                 else 
             print("There is no valid notify script enabled")
