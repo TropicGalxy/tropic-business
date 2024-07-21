@@ -22,8 +22,8 @@ Citizen.CreateThread(function()
         FreezeEntityPosition(ped, true)
         SetEntityInvincible(ped, true)
 
-        -- Determine the label based on ownership
-        local buyLabel = isBusinessOwned(i) and "Owned" or "Buy Business ($" .. business.BusinessPrice .. ")"
+         -- Add target interaction
+        local buyLabel = "Buy Business ($" .. business.BusinessPrice .. ")"
         local sellLabel = "Sell Business ($" .. (business.BusinessPrice * (business.SellBackPercentage / 100)) .. ")" -- if you want to show how much you get from selling then change line 38 and 61 to: label = sellLabel
 
         if Config.Target == "ox" then
@@ -37,9 +37,7 @@ Citizen.CreateThread(function()
                     args = { index = i },
                     distance = 2.5,
                     onSelect = function()
-                        if not isBusinessOwned(i) then
-                            TriggerServerEvent('business:buyBusiness', i)
-                        end
+                        TriggerServerEvent('business:buyBusiness', i)
                     end
                 },
                 {
@@ -62,9 +60,7 @@ Citizen.CreateThread(function()
                         icon = "fas fa-shopping-cart",
                         label = buyLabel,
                         action = function()
-                            if not isBusinessOwned(i) then
-                                TriggerServerEvent('business:buyBusiness', i)
-                            end
+                            TriggerServerEvent('business:buyBusiness', i)
                         end
                     },
                     {
