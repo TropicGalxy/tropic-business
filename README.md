@@ -69,8 +69,6 @@ Preview: https://youtu.be/WGHvTcwtjpw
 
 Support: https://dsc.gg/tropicgalxy
 
-Join the server i own: https://dsc.gg/tropicalroleplay
-
 # Most Recent Update
 
 added a config option for how you would like to buy businesses
