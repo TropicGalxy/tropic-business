@@ -13,55 +13,7 @@ or
 
 # Installation 
 
-choose your target in the fxmanifest
-
-configurate to your liking (you can check client.lua for an extra config option)
-
-drag and drop the script to your server files
-
-restart the server
-
-IF USING LICENSES:
-
-qb:
-
--- In qb-core/shares/items.lua file
-
-
-business_license 	        = {name = 'business_license', 		        label = 'Business License', 		 	    weight = 1, 		type = 'item', 		image = 'business_license.png', 	    unique = false, 	useable = true, 	shouldClose = true,	   combinable = nil,                    description = 'Business License'},
-
------
-
-ox
-
--- In ox-inventory shared items file
-
-['business_license'] = {  
-    label = 'Business License',  
-    weight = 1,  
-    type = 'item',  
-    image = 'business_license.png',   
-    canRemove = true,  
-}
-
-
-# Features
-
-- Blips for locations
-
-- Business Name
-
-- Business Price
-
-- The Businesses Job
-
-- The Businesses Grade
-
-- Ped Model
-
-- Sell Back Percentage
-
-- Buy Businesses With License
+https://tropical-productions.gitbook.io/tropical-productions/free-scripts/businesses
 
 # Links 
 
