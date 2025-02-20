@@ -5,7 +5,7 @@ local function isBusinessOwned(index)
     return businesses[index] and businesses[index].owner == Player.citizenid
 end
 
-Citizen.CreateThread(function()
+CreateThread(function()
     print("Config.Target: " .. tostring(Config.Target))
     for i, business in ipairs(Config.Businesses) do
         local pedModel = business.PedModel
